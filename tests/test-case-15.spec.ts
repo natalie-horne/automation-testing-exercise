@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { blockAds } from '../helpers/ads';
 
 import { SignupPage } from '../pages/signup.page';
 import { ProductsPage } from '../pages/products.page';
 import { CheckoutPage } from '../pages/checkout.page';
 import { PaymentPage } from '../pages/payment.page';
 import { createTestUser } from '../helpers/test-data';
+import { blockAds } from '../helpers/ads';
 
 test('Test Case 15 - register before checkout', async ({ page }) => {
   await blockAds(page);
