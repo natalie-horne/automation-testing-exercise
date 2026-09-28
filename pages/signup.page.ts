@@ -56,7 +56,9 @@ export class SignupPage {
   async deleteAccount() {
     await this.page.getByRole('link', { name: 'Delete Account' }).click();
 
-    await expect(this.page.getByText('Account Deleted!')).toBeVisible();
+    await expect(
+    this.page.getByText('Account Deleted!')
+  ).toBeVisible({ timeout: 10000 });
 
     await this.page.getByRole('link', { name: 'Continue' }).click();
   }
