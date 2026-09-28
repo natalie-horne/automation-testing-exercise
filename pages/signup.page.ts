@@ -1,21 +1,11 @@
 import { expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import type { TestUser } from '../helpers/test-data';
 
 export class SignupPage {
   constructor(private page: Page) {}
 
-  async registerNewUser(user: {
-    name: string;
-    email: string;
-    password: string;
-    firstName: string;
-    lastName: string;
-    address: string;
-    state: string;
-    city: string;
-    postcode: string;
-    mobile: string;
-  }) {
+  async registerNewUser(user: TestUser) {
     await this.page.getByRole('link', { name: 'Signup / Login' }).click();
 
     await expect(this.page.getByText('New User Signup!')).toBeVisible();

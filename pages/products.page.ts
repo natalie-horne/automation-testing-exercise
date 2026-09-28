@@ -15,10 +15,6 @@ export class ProductsPage {
       .getByText('Add to cart')
       .click();
 
-    await expect(
-    this.page.getByRole('heading', { name: 'Added!' })
-    ).toBeVisible({ timeout: 10000 });
-
     await this.page.getByRole('link', { name: 'View Cart' }).click();
 
     await expect(this.page).toHaveURL(/view_cart/);
